@@ -1,0 +1,2 @@
+{"asset_id": "123", "attribute_id": "#", "timestamp": "2022-07-31T23:28:37Z[UTC]", "value": "dog man test"}
+{"asset_id": "1234", "attribute_id": "#", "timestamp": "2022-07-31T23:28:37Z[UTC]", "value": "cat dog"}
