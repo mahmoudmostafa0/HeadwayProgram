@@ -1,4 +1,7 @@
 class Variables:
+    """
+    variables class taht is used to save varibles
+    """
     __stored_variables = {}
 
     @staticmethod

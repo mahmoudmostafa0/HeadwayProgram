@@ -1,4 +1,8 @@
-class Token(object):
+class Token:
+    """
+    class that is used to create token
+    """
+
     def __init__(self, token_type, value):
         self.type = token_type
         self.value = value

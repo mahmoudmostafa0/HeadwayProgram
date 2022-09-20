@@ -1,18 +1,20 @@
 from datetime import datetime
-
-from Compiler.Interpreter import Interpreter
-from Compiler.Lexer import Lexer
+from Compiler.interpreter import Interpreter
+from Compiler.lexer import Lexer
 from Compiler.Tables.Variables import Variables
-from Compiler.Parser import Parser
-from Input.CSVReader import CSVReader
-from Output.MySqlDataSink import MySqlDataSink
+from Compiler.parser import Parser
+from Input.csv_reader import CSVReader
+from Output.mysql_data_sink import MySqlDataSink
 
 
 def main():
+    """
+    main function
+    """
     data_sink = MySqlDataSink("localhost", "root", "root", "task1")
     reader = CSVReader("input.txt")
-    with open("equation.config", 'r') as f:
-        equation = f.read()
+    with open("equation.config", 'r') as file:
+        equation = file.read()
     lexer = Lexer(equation)
     parser = Parser(lexer)
     interpreter = Interpreter(parser)

@@ -4,10 +4,13 @@
 # there is no more input left for lexical analysis
 import enum
 
-from Compiler.Token import Token
+from Compiler.token import Token
 
 
 class TokenType(enum.Enum):
+    """
+    enum for the token type
+    """
     EOF = -1
     INTEGER = 1
     PLUS = '+'
@@ -22,7 +25,10 @@ class TokenType(enum.Enum):
     STRING = 11
 
 
-class Lexer(object):
+class Lexer:
+    """
+    lexer class for the interpreter
+    """
     def __init__(self, text):
         # client string input, e.g. "4 + 2 * 3 - 6 / 2"
         self.text = text
@@ -31,9 +37,15 @@ class Lexer(object):
         self.current_char = self.text[self.pos]
 
     def reset(self):
+        """
+        reset the lexer class
+        """
         self.__init__(self.text)
 
     def error(self):
+        """
+        raise an error
+        """
         raise Exception('Invalid character')
 
     def advance(self):
@@ -53,6 +65,9 @@ class Lexer(object):
         return nexttoken
 
     def skip_whitespace(self):
+        """
+        keep advacing until there is no whitespaces
+        """
         while self.current_char is not None and self.current_char.isspace():
             self.advance()
 
@@ -65,6 +80,9 @@ class Lexer(object):
         return int(result)
 
     def identifier(self):
+        """
+        returns an identifier
+        """
         result = ''
         while self.current_char is not None and self.current_char.isalnum():
             result += self.current_char
@@ -73,6 +91,9 @@ class Lexer(object):
         return Token(TokenType.IDENTIFIER, result)
 
     def string(self):
+        """
+        returns a string
+        """
         result = ''
         self.advance()
         while self.current_char is not None and self.current_char != '"':

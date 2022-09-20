@@ -1,4 +1,4 @@
-from Compiler.Tree.AST import AST
+from Compiler.Tree.base_node import AST
 from Compiler.Tables.Variables import Variables
 
 
