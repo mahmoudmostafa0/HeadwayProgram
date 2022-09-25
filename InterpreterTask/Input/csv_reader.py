@@ -1,6 +1,6 @@
 import json
 from Input.data_reader import DataReader
-from Message import Message
+from message import Message
 
 
 class CSVReader(DataReader):

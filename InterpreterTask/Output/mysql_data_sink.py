@@ -1,5 +1,5 @@
 import mysql.connector
-from Message import Message
+from message import Message
 from Output.data_sink import DataSink
 
 

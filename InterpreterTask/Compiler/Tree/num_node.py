@@ -11,3 +11,12 @@ class Num(AST):
     def __init__(self, token):
         self.token = token
         self.value = token.value
+
+    def __eq__(self, other):
+        """
+        when using == operator with token
+        """
+        if type(self) == type(other):
+            return self.value == other.value and self.token == other.token
+        else:
+            raise TypeError

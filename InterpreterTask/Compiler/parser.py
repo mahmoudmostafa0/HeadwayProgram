@@ -1,4 +1,3 @@
-from Compiler.lexer import TokenType
 from Compiler.Tree.BinaryOperators.divide_operator import DivOP
 from Compiler.Tree.BinaryOperators.minus_operator import MinusOP
 from Compiler.Tree.BinaryOperators.multiply_operator import MulOP
@@ -9,6 +8,7 @@ from Compiler.Tree.string_node import String
 from Compiler.Tree.UnaryOperators.negative_unary import NegativeUnary
 from Compiler.Tree.UnaryOperators.positive_unary import PositiveUnary
 from Compiler.Tree.variable_node import Var
+from Compiler.token import TokenType
 
 
 class Parser:
@@ -72,6 +72,7 @@ class Parser:
         if token.type == TokenType.IDENTIFIER:
             return self.variable()
         self.error()
+        return None
 
     def term(self):
         """term : factor ((MUL | DIV) factor)*"""

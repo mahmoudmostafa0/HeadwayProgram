@@ -2,27 +2,7 @@
 #
 # EOF (end-of-file) token is used to indicate that
 # there is no more input left for lexical analysis
-import enum
-
-from Compiler.token import Token
-
-
-class TokenType(enum.Enum):
-    """
-    enum for the token type
-    """
-    EOF = -1
-    INTEGER = 1
-    PLUS = '+'
-    MINUS = '-'
-    MUL = '*'
-    DIV = '/'
-    LPAREN = '('
-    RPAREN = ')'
-    COMMA = ','
-    IDENTIFIER = 9
-    IF = 10
-    STRING = 11
+from Compiler.token import Token, TokenType
 
 
 class Lexer:
