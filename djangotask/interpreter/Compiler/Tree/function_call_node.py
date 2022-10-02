@@ -1,5 +1,5 @@
-from Compiler.Tables.Functions import Functions
-from Compiler.Tree.base_node import AST
+from interpreter.Compiler.Tables.Functions import Functions
+from interpreter.Compiler.Tree.base_node import AST
 
 
 class FuncCallNode(AST):

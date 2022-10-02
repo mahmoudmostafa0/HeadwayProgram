@@ -1,5 +1,5 @@
-from Compiler.Tree.base_node import AST
-from Compiler.Tables.variables import Variables
+from interpreter.Compiler.Tree.base_node import AST
+from interpreter.Compiler.Tables.variables import Variables
 
 
 class Var(AST):

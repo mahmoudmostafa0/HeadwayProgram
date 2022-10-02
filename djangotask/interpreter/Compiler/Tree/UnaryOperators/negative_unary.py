@@ -1,5 +1,5 @@
-from Compiler.Tree.UnaryOperators.unary_operator import UnaryOP
-from Compiler.token import TokenType, Token
+from interpreter.Compiler.Tree.UnaryOperators.unary_operator import UnaryOP
+from interpreter.Compiler.token import Token, TokenType
 
 
 class NegativeUnary(UnaryOP):

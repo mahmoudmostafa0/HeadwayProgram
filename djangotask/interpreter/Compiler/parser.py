@@ -1,14 +1,14 @@
-from Compiler.Tree.BinaryOperators.divide_operator import DivOP
-from Compiler.Tree.BinaryOperators.minus_operator import MinusOP
-from Compiler.Tree.BinaryOperators.multiply_operator import MulOP
-from Compiler.Tree.BinaryOperators.plus_operator import PlusOP
-from Compiler.Tree.function_call_node import FuncCallNode
-from Compiler.Tree.num_node import Num
-from Compiler.Tree.string_node import String
-from Compiler.Tree.UnaryOperators.negative_unary import NegativeUnary
-from Compiler.Tree.UnaryOperators.positive_unary import PositiveUnary
-from Compiler.Tree.variable_node import Var
-from Compiler.token import TokenType
+from interpreter.Compiler.Tree.BinaryOperators.divide_operator import DivOP
+from interpreter.Compiler.Tree.BinaryOperators.minus_operator import MinusOP
+from interpreter.Compiler.Tree.BinaryOperators.multiply_operator import MulOP
+from interpreter.Compiler.Tree.BinaryOperators.plus_operator import PlusOP
+from interpreter.Compiler.Tree.UnaryOperators.negative_unary import NegativeUnary
+from interpreter.Compiler.Tree.UnaryOperators.positive_unary import PositiveUnary
+from interpreter.Compiler.Tree.function_call_node import FuncCallNode
+from interpreter.Compiler.Tree.num_node import Num
+from interpreter.Compiler.Tree.string_node import String
+from interpreter.Compiler.Tree.variable_node import Var
+from interpreter.Compiler.token import TokenType
 
 
 class Parser:

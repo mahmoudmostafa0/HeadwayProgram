@@ -1,4 +1,4 @@
-from Compiler.Tree.BinaryOperators.binary_operator import BinOP
+from interpreter.Compiler.Tree.BinaryOperators.binary_operator import BinOP
 
 
 class MulOP(BinOP):

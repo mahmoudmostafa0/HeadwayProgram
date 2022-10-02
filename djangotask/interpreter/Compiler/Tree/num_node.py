@@ -1,4 +1,4 @@
-from Compiler.Tree.base_node import AST
+from interpreter.Compiler.Tree.base_node import AST
 
 
 class Num(AST):

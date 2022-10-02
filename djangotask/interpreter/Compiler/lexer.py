@@ -2,7 +2,7 @@
 #
 # EOF (end-of-file) token is used to indicate that
 # there is no more input left for lexical analysis
-from Compiler.token import Token, TokenType
+from interpreter.Compiler.token import Token, TokenType
 
 
 class Lexer:

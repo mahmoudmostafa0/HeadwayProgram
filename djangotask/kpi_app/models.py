@@ -9,24 +9,33 @@ class KpiInformation(models.Model):
     """
     name = models.CharField(max_length=30)
     expression = models.CharField(max_length=50)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=200, blank=True)
 
+    # link kpi equation with one attribute id (leave for now)
+    # link kpi equation with many asset ids
     def __str__(self):
-        return f"name : {self.name}, primary key: {self.id}"
+        return f"{self.name}"
+
+
+class KpiDevice(models.Model):
+    asset_id = models.CharField(max_length=50)
+    kpi_id = models.ForeignKey(KpiInformation, related_name='assets', on_delete=models.CASCADE)
+
+    # def __str__(self):
+    #  return self.__dict__
+
+    class Meta:
+        unique_together = ['asset_id', 'kpi_id']
+
+
+class KpiMessageEquationResult(models.Model):
+    kpi_equation = models.ForeignKey(KpiInformation, on_delete=models.CASCADE)
+    kpi_message = models.ForeignKey("KpiMessage", on_delete=models.CASCADE)
+    value = models.CharField(max_length=30)
 
 
 class KpiMessage(models.Model):
-    asset_id = models.IntegerField(primary_key=True)
+    asset_id = models.CharField(max_length=30)
     attribute_id = models.CharField(max_length=30)
-    timestamp = models.DateTimeField()
-    value = models.CharField(max_length=50)
-
-    def __str__(self):
-        return f"value : {self.value}, primate key: {self.asset_id}"
-
-
-class KpiResult(models.Model):
-    message_asset_id = models.ForeignKey(KpiMessage, on_delete=models.CASCADE)
-    message_kpi_expression = models.ForeignKey(KpiInformation, on_delete=models.CASCADE)
-    timestamp = models.DateTimeField()
-    result = models.CharField(max_length=50)
+    timestamp = models.CharField(max_length=30)
+    message_result = models.ManyToManyField(KpiInformation, through=KpiMessageEquationResult)

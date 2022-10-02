@@ -1,5 +1,6 @@
 from abc import ABC
-from Compiler.Tree.base_node import AST
+
+from interpreter.Compiler.Tree.base_node import AST
 
 
 class BinOP(AST, ABC):

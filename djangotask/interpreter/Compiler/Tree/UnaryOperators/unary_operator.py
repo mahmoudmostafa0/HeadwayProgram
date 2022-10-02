@@ -1,7 +1,7 @@
 from abc import ABC
 
-from Compiler.Tree.base_node import AST
-from Compiler.token import Token
+from interpreter.Compiler.Tree.base_node import AST
+from interpreter.Compiler.token import Token
 
 
 class UnaryOP(AST, ABC):
